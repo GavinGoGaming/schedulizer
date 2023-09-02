@@ -1,0 +1,154 @@
+@import url('./poppins.css');
+body.dark {
+    font-family: 'Poppins', 'Arial', 'Helvetica', 'sans-serif';
+    font-weight: 200;
+    background-color: #333;
+    color: white;
+}
+body.black {
+    font-family: 'Poppins', 'Arial', 'Helvetica', 'sans-serif';
+    font-weight: 200;
+    background-color: #141414;
+    color: white;
+}
+body.light {
+    font-family: 'Poppins', 'Arial', 'Helvetica', 'sans-serif';
+    font-weight: 200;
+    background-color: #d4cebc;
+    color: rgb(0, 0, 0);
+}
+body.sky {
+    font-family: 'Poppins', 'Arial', 'Helvetica', 'sans-serif';
+    font-weight: 200;
+    background-color: #93cdff;
+    color: rgb(0, 0, 0);
+}
+body.darkblue {
+    font-family: 'Poppins', 'Arial', 'Helvetica', 'sans-serif';
+    font-weight: 200;
+    background-color: #1c30a2;
+    color: rgb(255, 255, 255);
+}
+body.light > i {
+    color: rgb(0, 0, 0) !important;
+}
+body.sky > i {
+    color: rgb(0, 0, 0) !important;
+}
+.med {
+    font-family: 'Poppins Medium', 'Poppins', 'Arial', 'Helvetica', 'sans-serif';
+}
+.bold {
+    font-family: 'Poppins Bold', 'Poppins', 'Arial', 'Helvetica', 'sans-serif';
+}
+span:not(.regular) {
+    font-family: 'Poppins Bold', 'Poppins', 'Arial', 'Helvetica', 'sans-serif';
+}
+@keyframes zl {
+    0% {
+        margin-left: 0vw;
+    }
+
+    100% {
+        margin-left: 20vw;
+        opacity: 1;
+    }
+}
+@keyframes fin {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+*:not(body):not(html):not(div):not(span):not(i):not(a):not(button.nopadding):not(select) {
+    margin-left: 20vw;
+}
+a {
+    animation-name: zl;
+    animation-timing-function: ease;
+    position: relative;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    width:80vw;
+    display:block;
+    opacity: 0;
+    font-size: 24px;
+}
+i{
+    transition: all 0.25s ease;
+}
+.fadein {
+    animation-name: fin;
+    animation-timing-function: ease;
+    position: relative;
+    animation-duration: 1s;
+}
+.fadein2 {
+    animation-name: fin;
+    animation-timing-function: ease;
+    position: relative;
+    animation-duration: 1s;
+    animation-delay: 0.75s;
+    animation-fill-mode: forwards;
+}
+a:nth-of-type(1) {
+    animation-delay: 200ms;
+}
+a:nth-of-type(2) {
+    animation-delay: 300ms;
+}
+a:nth-of-type(3) {
+    animation-delay: 400ms;
+}
+a:nth-of-type(4) {
+    animation-delay: 500ms;
+}
+a:nth-of-type(5) {
+    animation-delay: 600ms;
+}
+a:nth-of-type(6) {
+    animation-delay: 700ms;
+}
+a:nth-of-type(7) {
+    animation-delay: 800ms;
+}
+input, select {
+    background-color: #222;
+    color: white;
+    border: 1px solid black;
+    border-radius: 6px;
+    padding: 8px;
+    margin: 1px;
+}
+.hidden {
+    display: none;
+}
+button {
+    background-color: #222;
+    color: white;
+    border: 1px solid black;
+    border-radius: 9px;
+    padding: 8px;
+    margin: 1px;
+}
+input::placeholder {
+    color: rgba(255, 255, 255, 0.526);
+}
+
+@keyframes blink {
+    0% {
+      opacity: 100%;
+    }
+    50% {
+      opacity: 20%;
+    }
+    100%{
+      opacity: 100%;
+    }
+  }
+#colon {
+    animation-name: blink;animation-duration:1.1s;animation-iteration-count: infinite;
+}

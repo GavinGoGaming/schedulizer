@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Schedulizer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://site-assets.fontawesome.com/releases/v6.3.0/css/all.css" rel="stylesheet"/>
+</head>
+<body class="dark">
+    <h1>schedulizer | <span id="hour"></span><span id="colon">:</span><span id="cmin"></span> - <span id="month"></span>/<span id="day2"></span>/<span id="year"></span></h1>
+    <a><span id="day">LOADING</span> - <span id="type">LOADING</span> day</h2>
+    <a>Period <span id="periodNumber">LOADING</span> ( <span id="prdname">LOADING</span> - <span id="tchrname">LOADING</span> )</a>
+    <a>next <span id="mins">LOADING</span> - last was <span id="minsdone">LOADING</span></a>
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <h1 class=fadein2 style="opacity: 0;"><i class="fa-solid fa-gear" style="--fa-rotate-angle: 180deg" onclick="this.classList.toggle('fa-rotate-by');
+    document.querySelector('#mctext').classList.toggle('hidden');document.querySelector('#mctext').classList.toggle('fadein');
+    document.querySelector('#sis').classList.toggle('hidden');document.querySelector('#sis').classList.toggle('fadein');
+    document.querySelector('#theme').classList.toggle('hidden');document.querySelector('#theme').classList.toggle('fadein');"></i> settings</h1>
+    <h1 class="hidden" id="mctext">classes/teachers <i class="fa-solid fa-caret-down" style="cursor:pointer;color:white"
+        onclick="document.querySelector('#mconfig').classList.toggle('hidden');document.querySelector('#mconfig').classList.toggle('fadein')"></i></h1>
+    <div style="width:100%;height:60vh;" id="mconfig" class=hidden>
+        <div style="width: 50%; float:left;height:60vh;">
+            <input type="text" placeholder="Period 1..." id="p1c"> - period 1<br>
+            <input type="text" placeholder="Period 2..." id="p2c"> - period 2<br>
+            <input type="text" placeholder="Period 3..." id="p3c"> - period 3<br>
+            <input type="text" placeholder="Period 4..." id="p4c"> - period 4<br>
+            <input type="text" placeholder="Period 5..." id="p5c"> - period 5<br>
+            <input type="text" placeholder="Period 6..." id="p6c"> - period 6<br>
+            <button id="saveprd">save periods</button>
+         </div>
+         
+         <div style="width: 50%;float:right;height:60vh;">
+            <input type="text" placeholder="P1 Teacher..." id="p1t"> - teacher 1<br>
+            <input type="text" placeholder="P2 Teacher..." id="p2t"> - teacher 2<br>
+            <input type="text" placeholder="P3 Teacher..." id="p3t"> - teacher 3<br>
+            <input type="text" placeholder="P4 Teacher..." id="p4t"> - teacher 4<br>
+            <input type="text" placeholder="P5 Teacher..." id="p5t"> - teacher 5<br>
+            <input type="text" placeholder="P6 Teacher..." id="p6t"> - teacher 6<br>
+            <input type="text" placeholder="HR Teacher..." id="hrt"> - homeroom<br>
+            <button id="savetchr">save teachers</button>
+         </div>
+    </div>
+    <div style="width:100%">
+    <h2 class="hidden" id="sis">faq<i class="fa-solid fa-caret-down" style="cursor:pointer;color:white"
+        onclick="document.querySelector('#coog').classList.toggle('hidden');document.querySelector('#coog').classList.toggle('fadein')"></i></h2>
+    <div id="coog" class=hidden>
+    <b>Q:</b> period/teacher name is stuck on LOADING, null, or nothing <br>
+    <b>A:</b> please <button class="nopadding" onclick="this.textContent = 'resetting...';window.localStorage.removeItem('periodData');
+    setTimeout(function(){
+        window.location.reload();
+    });">reset period names</button> or <button class="nopadding" onclick="this.textContent = 'resetting...';window.localStorage.removeItem('teacherData');
+    setTimeout(function(){
+        window.location.reload();
+    });">reset teacher names</button></div><br><br>
+    </div>
+    <h2 id="theme" class="hidden">theme: <select name="Theme" onchange="window.localStorage.theme = this.value;document.body.className = window.localStorage.theme">
+        <option value="dark">Default Dark</option>
+        <option value="black">Blackout</option>
+        <option value="light">Bright</option>
+        <option value="sky">Sky Blue</option>
+        <option value="darkblue">Ocean Blue</option>
+    </select></h2>
+    <script src="https://raw.githubusercontent.com/QuantumCatgirl/js_humanized_time_span/master/humanized_time_span.js"></script>
+    <script src="index.js"></script>
+    <script src="periods.js"></script>
+    <script src="teachers.js"></script>
+</body>
+</html>
