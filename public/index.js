@@ -1,6 +1,9 @@
 if (window.localStorage.theme == null || window.localStorage.theme == "" || window.localStorage.theme == undefined) {
     window.localStorage.theme = "dark"
 }
+if (window.localStorage.fontname == null || window.localStorage.fontname == "" || window.localStorage.fontname == undefined) {
+    window.localStorage.fontname = "poppins"
+}
 if (window.localStorage["teacherData"] == null || window.localStorage["teacherData"] == "" || window.localStorage["teacherData"] == "[]" || window.localStorage["teacherData"] == undefined) {
     window.localStorage["teacherData"] = JSON.stringify(["Unknown","Unknown","Unknown","Unknown","Unknown","Unknown","Unknown"])
 }
@@ -52,11 +55,9 @@ var timeAgo = (date) => {
     var ms = xx.getTime() - date.getTime();
     var seconds = Math.floor(ms / 1000);
     var minutes = Math.floor(seconds / 60);
-var hours = Math.floor(minutes / 60);
-var days = Math.floor(hours / 24);
-var months = Math.floor(days / 30);
-var years = Math.floor(months / 12);
-    return minutes + 'm ago';}
+    var hours = Math.floor(minutes / 60);
+    return minutes;
+}
 
 function settime(t1, t2) {
     var startTime = new Date(`2023/08/23 ${t1}`); 
@@ -64,11 +65,10 @@ function settime(t1, t2) {
     var difference = endTime.getTime() - startTime.getTime(); // This will give difference in milliseconds
     var resultInMinutes = Math.round(difference / 60000);
 
-    var numb = timeAgo(startTime).match(/\d/g);
-    numb = numb.join("");
-    document.querySelector("#mins").textContent = "in " +(resultInMinutes-parseInt(numb))+"m"
+    var numb = timeAgo(startTime);
+    document.querySelector("#mins").textContent = "in " +(resultInMinutes-numb)+"m"
 
-    document.querySelector("#minsdone").textContent = timeAgo(startTime)
+    document.querySelector("#minsdone").textContent = "" + (timeAgo(startTime)) + "m ago"
 }
 function setup() {
     if(day == "home") {
@@ -172,7 +172,7 @@ function setup() {
     
 }
 document.addEventListener('DOMContentLoaded', ()=>{
-    document.body.className = window.localStorage.theme
+    document.body.className = window.localStorage.theme + " " + window.localStorage.fontname
     if (date.getDay() == 0) {
         dayName.textContent = "sunday"
         dayType.textContent = "home"

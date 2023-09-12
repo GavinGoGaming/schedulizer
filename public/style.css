@@ -1,33 +1,38 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 @import url('./poppins.css');
 body.dark {
-    font-family: 'Poppins', 'Arial', 'Helvetica', 'sans-serif';
     font-weight: 200;
     background-color: #333;
     color: white;
 }
 body.black {
-    font-family: 'Poppins', 'Arial', 'Helvetica', 'sans-serif';
     font-weight: 200;
     background-color: #141414;
     color: white;
 }
 body.light {
-    font-family: 'Poppins', 'Arial', 'Helvetica', 'sans-serif';
     font-weight: 200;
     background-color: #d4cebc;
     color: rgb(0, 0, 0);
 }
 body.sky {
-    font-family: 'Poppins', 'Arial', 'Helvetica', 'sans-serif';
     font-weight: 200;
     background-color: #93cdff;
     color: rgb(0, 0, 0);
 }
 body.darkblue {
-    font-family: 'Poppins', 'Arial', 'Helvetica', 'sans-serif';
     font-weight: 200;
     background-color: #1c30a2;
     color: rgb(255, 255, 255);
+}
+body.sunrise {
+    font-weight: 200;
+    background-image: url("https://wallpaperaccess.com/full/496807.jpg");
+    background-size: cover;
+    color: rgb(255,255,255);
+    text-shadow: black 1px 1px 0px, black -1px -1px 0px, black 2px 2px 0px, black -2px -2px 0px,
+                 black 1px -1px 0px, black -1px 1px 0px, black 2px -2px 0px, black -2px 2px 0px;
 }
 body.light > i {
     color: rgb(0, 0, 0) !important;
@@ -35,13 +40,36 @@ body.light > i {
 body.sky > i {
     color: rgb(0, 0, 0) !important;
 }
-.med {
+body.poppins {
+    font-family: 'Poppins', 'Arial', 'Helvetica', 'sans-serif';
+}
+body.patrick {
+    font-family: 'Patrick Hand', 'Arial', 'Helvetica', 'sans-serif';
+}
+body.arial {
+    font-family: 'Arial', 'Helvetica', 'sans-serif';
+}
+
+body.arial > .med {
+    font-weight: 600;
+}
+body.arial > .bold {
+    font-weight: 800;
+}
+body.arial > span:not(.regular) {
+    font-weight: 800;
+}
+body.arial > a > span:not(.regular) {
+    font-weight: 800;
+}
+
+body.poppins > .med {
     font-family: 'Poppins Medium', 'Poppins', 'Arial', 'Helvetica', 'sans-serif';
 }
-.bold {
+body.poppins > .bold {
     font-family: 'Poppins Bold', 'Poppins', 'Arial', 'Helvetica', 'sans-serif';
 }
-span:not(.regular) {
+body.poppins > span:not(.regular) {
     font-family: 'Poppins Bold', 'Poppins', 'Arial', 'Helvetica', 'sans-serif';
 }
 @keyframes zl {

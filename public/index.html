@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://site-assets.fontawesome.com/releases/v6.3.0/css/all.css" rel="stylesheet"/>
 </head>
-<body class="dark">
+<body class="dark poppins">
     <h1>schedulizer | <span id="hour"></span><span id="colon">:</span><span id="cmin"></span> - <span id="month"></span>/<span id="day2"></span>/<span id="year"></span></h1>
     <a><span id="day">LOADING</span> - <span id="type">LOADING</span> day</h2>
     <a>Period <span id="periodNumber">LOADING</span> ( <span id="prdname">LOADING</span> - <span id="tchrname">LOADING</span> )</a>
@@ -54,13 +54,18 @@
         window.location.reload();
     });">reset teacher names</button></div><br><br>
     </div>
-    <h2 id="theme" class="hidden">theme: <select name="Theme" onchange="window.localStorage.theme = this.value;document.body.className = window.localStorage.theme">
+    <h2 id="theme" class="hidden">theme: <select name="Theme" onchange="window.localStorage.theme = this.value;document.body.classList.remove('dark','black','light','sky','darkblue', 'sunrise');document.body.classList.add(this.value)">
         <option value="dark">Default Dark</option>
         <option value="black">Blackout</option>
         <option value="light">Bright</option>
         <option value="sky">Sky Blue</option>
         <option value="darkblue">Ocean Blue</option>
-    </select></h2>
+        <option value="sunrise">Sunrise</option>
+    </select><br>
+font: <select name="Font" id="font" onchange="window.localStorage.fontname = this.value;document.body.classList.remove('poppins','patrick','arial');document.body.classList.add(this.value)">
+<option value="poppins">Poppins</option>
+<option value="patrick">Patrick Hand</option>
+<option value="arial">arial</option></select></h2>
     <script src="https://raw.githubusercontent.com/QuantumCatgirl/js_humanized_time_span/master/humanized_time_span.js"></script>
     <script src="index.js"></script>
     <script src="periods.js"></script>
